@@ -1,0 +1,8 @@
+@use 'styles/abstracts' as *;
+
+.cursor {
+  display: inline-block;
+  color: $color-accent;
+  animation: blink 0.9s step-end infinite;
+  margin-left: 1px;
+}

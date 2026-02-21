@@ -1,0 +1,25 @@
+@use 'styles/abstracts' as *;
+
+.footer {
+  background: $color-bg-footer;
+  padding: 2rem $section-padding-x;
+  border-top: 1px solid rgba(99, 225, 190, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  &__logo {
+    font-family: $font-mono;
+    color: $color-accent;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  &__copy {
+    font-family: $font-body;
+    color: $color-text-dim;
+    font-size: 0.8rem;
+  }
+}

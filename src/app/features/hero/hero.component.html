@@ -13,10 +13,11 @@
   <div class="content">
     <p class="eyebrow">HELLO, WORLD</p>
 
-    <h1 class="name">
+    <h3 class="name">
       {{ p.firstName }}<br />
-      <span class="accent">Appiya</span>&nbsp;<span class="outline">Chandrasekar</span>
-    </h1>
+      <span class="accent">{{ p.middleName }}</span>
+      <span class="outline">{{ p.lastName }}</span>
+    </h3>
 
     <p class="desc">
       <app-typewriter [text]="p.devDesc" />

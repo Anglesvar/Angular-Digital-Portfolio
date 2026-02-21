@@ -1,0 +1,85 @@
+@use 'styles/abstracts' as *;
+
+.projects {
+  min-height: 100vh;
+  background: $color-bg-secondary;
+  padding: $section-padding-y $section-padding-x;
+  position: relative; overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(to right, transparent, $color-border-accent, transparent);
+  }
+
+  &__bg {
+    position: absolute; inset: 0;
+    background-image: var(--bg-url);
+    background-size: cover; background-position: center;
+    opacity: 0.04; pointer-events: none;
+  }
+
+  &__container {
+    max-width: $container-max-width;
+    margin: 0 auto; position: relative; z-index: 2;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.5rem; margin-bottom: 3rem;
+    @include tablet { grid-template-columns: 1fr; }
+  }
+
+  &__more {
+    text-align: center;
+    opacity: 0; transition: opacity 0.7s 0.5s;
+    &--visible { opacity: 1; }
+  }
+
+  @include tablet { padding: $section-padding-y 1.5rem; }
+}
+
+.card {
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: 1.8rem;
+  background: rgba(255,255,255,0.02);
+  cursor: pointer;
+  position: relative; overflow: hidden;
+  text-decoration: none; display: block;
+  opacity: 0; transform: translateY(40px);
+  transition: opacity 0.6s, transform 0.6s, border-color 0.3s, background 0.3s, box-shadow 0.3s;
+
+  &--visible { opacity: 1; transform: none; }
+
+  &:hover {
+    background: rgba(99,225,190,0.06);
+    border-color: rgba(99,225,190,0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(99,225,190,0.1);
+    .card__radial { opacity: 1; }
+    .card__arrow  { color: $color-accent; }
+  }
+
+  &__radial {
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(99,225,190,0.07), transparent 60%);
+    pointer-events: none; opacity: 0; transition: opacity 0.4s;
+  }
+
+  &__header {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; margin-bottom: 1rem;
+  }
+  &__index { font-family: $font-mono; color: $color-accent; font-size: 0.72rem; opacity: 0.7; }
+  &__stars  { color: $color-text-faint; font-size: 0.8rem; }
+  &__name   { font-family: $font-display; color: $color-text-primary; font-size: 1.1rem; margin: 0 0 0.5rem; font-weight: 700; }
+  &__desc   { color: $color-text-muted; font-size: 0.84rem; line-height: 1.7; margin: 0 0 1.2rem; font-family: $font-body; }
+
+  &__footer { display: flex; align-items: center; gap: 0.5rem; }
+  &__dot    { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  &__lang   { font-family: $font-mono; font-size: 0.7rem; color: $color-text-faint; }
+  &__arrow  { margin-left: auto; color: $color-text-faint; font-size: 1rem; transition: color 0.3s; }
+}

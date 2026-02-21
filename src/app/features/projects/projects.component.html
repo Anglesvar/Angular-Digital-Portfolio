@@ -1,0 +1,54 @@
+@if (data(); as d) {
+  <section
+    id="projects"
+    class="projects"
+    appInView
+    (inView)="onInView()"
+    [style.--bg-url]="'url(' + d.backgrounds.projects + ')'"
+  >
+    <div class="projects__bg"></div>
+    <div class="projects__container">
+      <app-section-header [label]="d.projects.subLabel" [title]="d.projects.heading" />
+
+      <div class="projects__grid">
+        @for (repo of d.projects.fallbackRepos.slice(0, d.projects.displayCount); track repo.name; let i = $index) {
+          <a
+            [href]="repo.html_url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card"
+            [class.card--visible]="visible()"
+            [style.transition-delay]="(i * 0.1) + 's'"
+          >
+            <div class="card__radial"></div>
+            <div class="card__header">
+              <span class="card__index">&#123; {{ padIndex(i) }} &#125;</span>
+              <span class="card__stars">⭐ {{ repo.stargazers_count }}</span>
+            </div>
+            <h3 class="card__name">{{ repo.name }}</h3>
+            <p class="card__desc">{{ repo.description }}</p>
+            <div class="card__footer">
+              <span
+                class="card__dot"
+                [style.background]="getColor(repo.language, d.languageColors)"
+              ></span>
+              <span class="card__lang">{{ repo.language }}</span>
+              <span class="card__arrow">↗</span>
+            </div>
+          </a>
+        }
+      </div>
+
+      <div class="projects__more" [class.projects__more--visible]="visible()">
+        <app-button
+          [href]="'https://github.com/' + d.projects.github.username"
+          variant="outline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View All on GitHub ↗
+        </app-button>
+      </div>
+    </div>
+  </section>
+}

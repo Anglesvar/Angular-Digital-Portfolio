@@ -1,0 +1,38 @@
+@if (data(); as d) {
+  <section
+    id="contact"
+    class="contact"
+    appInView
+    (inView)="onInView()"
+    [style.--bg-url]="'url(' + d.backgrounds.contact + ')'"
+  >
+    <div class="contact__bg"></div>
+    <div class="contact__glow"></div>
+    <div class="contact__container">
+      <app-section-header
+        [label]="d.contact.subLabel"
+        title="Let's <span class='accent'>Connect</span>"
+      />
+      <p class="contact__tagline" [class.contact__tagline--visible]="visible()">
+        {{ d.contact.tagline }}
+      </p>
+      <div class="contact__cta" [class.contact__cta--visible]="visible()">
+        <app-button [href]="'mailto:' + d.personal.emailId" variant="primary">
+          Send Email ✉
+        </app-button>
+        <app-button [href]="'tel:+91' + d.personal.mobileNumber" variant="outline">
+          Call Me ☎
+        </app-button>
+      </div>
+      <div class="contact__socials" [class.contact__socials--visible]="visible()">
+        @for (s of d.social; track s.id) {
+          <a [href]="s.url" target="_blank" rel="noopener noreferrer"
+             class="contact__social-link" [attr.aria-label]="s.label">
+            <i [class]="s.icon"></i>
+            {{ s.label }}
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+}

@@ -28,7 +28,9 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/assets"
+              "src/assets",
+              "src/robots.txt",
+              "src/_redirects"
             ],
             "styles": ["src/styles/main.scss"],
             "scripts": [],

@@ -1,0 +1,15 @@
+@if (data(); as d) {
+  <nav class="navbar" [class.navbar--scrolled]="scrolled()">
+    <span class="navbar__logo">&lt;ANG /&gt;</span>
+    <div class="navbar__links">
+      @for (link of d.navigation.links; track link) {
+        <a
+          [href]="'#' + link.toLowerCase()"
+          class="navbar__link"
+          [class.navbar__link--active]="activeLink() === link"
+          (click)="setActive(link)"
+        >{{ link }}</a>
+      }
+    </div>
+  </nav>
+}

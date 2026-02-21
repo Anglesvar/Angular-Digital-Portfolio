@@ -1,0 +1,52 @@
+@use 'styles/abstracts' as *;
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: $z-navbar;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 3rem;
+  transition: $transition-smooth;
+
+  &--scrolled {
+    background: rgba(5, 8, 20, 0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid $color-accent-glow;
+  }
+
+  &__logo {
+    font-family: $font-mono;
+    color: $color-accent;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    cursor: default;
+  }
+
+  &__links {
+    display: flex;
+    gap: 2.5rem;
+    @include tablet { gap: 1.2rem; }
+  }
+
+  &__link {
+    font-family: $font-mono;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    color: $color-text-muted;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: $transition-fast;
+    text-decoration: none;
+
+    &:hover,
+    &--active {
+      color: $color-accent;
+      border-bottom-color: $color-accent;
+    }
+  }
+
+  @include tablet { padding: 1rem 1.5rem; }
+}

@@ -1,0 +1,50 @@
+@if (data(); as d) {
+  <section
+    id="about"
+    class="about"
+    appInView
+    (inView)="onInView()"
+    [style.--bg-url]="'url(' + d.backgrounds.about + ')'"
+  >
+    <div class="about__bg"></div>
+    <div class="about__container">
+
+      <!-- Left -->
+      <div class="about__left" [class.about__left--visible]="visible()">
+        <app-section-header [label]="d.about.subLabel" [title]="d.about.heading" />
+        <p class="about__description">{{ d.about.description }}</p>
+        <div class="about__contact-row">
+          <span class="about__contact-key">Email</span>
+          <span class="about__contact-val">{{ d.personal.emailId }}</span>
+        </div>
+        <div class="about__contact-row">
+          <span class="about__contact-key">Phone</span>
+          <span class="about__contact-val">{{ d.personal.mobileNumber }}</span>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="about__right" [class.about__right--visible]="visible()">
+        <span class="about__stack-label">// TECH STACK</span>
+        <div class="about__skills">
+          @for (skill of d.about.skills; track skill) {
+            <span class="about__skill">{{ skill }}</span>
+          }
+        </div>
+        <div class="about__stats">
+          @for (stat of d.about.stats; track stat.label; let i = $index) {
+            <div
+              class="about__stat"
+              [class.about__stat--visible]="visible()"
+              [style.transition-delay]="(0.35 + i * 0.1) + 's'"
+            >
+              <div class="about__stat-value">{{ stat.value }}</div>
+              <div class="about__stat-label">{{ stat.label }}</div>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </section>
+}

@@ -1,15 +1,47 @@
 @if (data(); as d) {
   <nav class="navbar" [class.navbar--scrolled]="scrolled()">
+
     <span class="navbar__logo">&lt;ANG /&gt;</span>
+
+    <!-- Desktop links -->
     <div class="navbar__links">
       @for (link of d.navigation.links; track link) {
-        <a
-          [href]="'#' + link.toLowerCase()"
+        
+          <a [href]="'#' + link.toLowerCase()"
           class="navbar__link"
           [class.navbar__link--active]="activeLink() === link"
           (click)="setActive(link)"
         >{{ link }}</a>
       }
     </div>
+
+    <!-- Hamburger button (mobile only) -->
+    <button
+      class="navbar__hamburger"
+      [class.navbar__hamburger--open]="menuOpen()"
+      (click)="toggleMenu()"
+      aria-label="Toggle menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <!-- Mobile drawer -->
+  <div class="navbar__drawer" [class.navbar__drawer--open]="menuOpen()">
+    @for (link of d.navigation.links; track link) {
+      
+        <a [href]="'#' + link.toLowerCase()"
+        class="navbar__drawer-link"
+        [class.navbar__drawer-link--active]="activeLink() === link"
+        (click)="setActive(link)"
+      >{{ link }}</a>
+    }
+  </div>
+
+  <!-- Backdrop -->
+  @if (menuOpen()) {
+    <div class="navbar__backdrop" (click)="toggleMenu()"></div>
+  }
 }

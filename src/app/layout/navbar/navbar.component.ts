@@ -13,8 +13,9 @@ export class NavbarComponent {
   private portfolioService = inject(PortfolioService);
   data = this.portfolioService.data;
 
-  scrolled = signal(false);
+  scrolled   = signal(false);
   activeLink = signal('Home');
+  menuOpen   = signal(false);
 
   @HostListener('window:scroll')
   onScroll(): void {
@@ -22,7 +23,18 @@ export class NavbarComponent {
     this.scrolled.set(window.scrollY > threshold);
   }
 
+  // Close menu on Escape key
+  @HostListener('window:keydown.escape')
+  onEscape(): void {
+    this.menuOpen.set(false);
+  }
+
+  toggleMenu(): void {
+    this.menuOpen.update(open => !open);
+  }
+
   setActive(link: string): void {
     this.activeLink.set(link);
+    this.menuOpen.set(false); // close drawer after tapping a link
   }
 }

@@ -1,0 +1,139 @@
+{
+  "personal": {
+    "firstName": "Anglesvar",
+    "middleName": "",
+    "lastName": "Appiya Chandrasekar",
+    "devDesc": "| AI Generalist | Android Developer | Full Stack Developer |",
+    "logoText": "<ANG />",
+    "resumeLink": "https://storage.googleapis.com/anglesvar/Anglesvar_Resume.pdf",
+    "mobileNumber": "9994578216",
+    "emailId": "anglesvar.cheenu98@gmail.com"
+  },
+  "social": [
+    {
+      "id": 0,
+      "icon": "fab fa-github",
+      "url": "https://github.com/anglesvar",
+      "label": "GitHub"
+    },
+    {
+      "id": 1,
+      "icon": "fab fa-stack-overflow",
+      "url": "https://stackoverflow.com/users/9511430/anglesvar",
+      "label": "Stack Overflow"
+    },
+    {
+      "id": 2,
+      "icon": "fab fa-linkedin-in",
+      "url": "https://www.linkedin.com/in/anglesvar-chandrasekar-appiya/",
+      "label": "LinkedIn"
+    }
+  ],
+  "about": {
+    "heading": "About Me",
+    "subLabel": "// ABOUT ME",
+    "description": "I'm Anglesvar Appiya Chandrasekar, an IT Professional, aiming to contribute cutting-edge web & mobile solutions in a growth-oriented AI tech environment, leveraging hands-on expertise in scalable architectures, cloud deployment & clean UI design❤",
+    "skills": [
+      "React",
+      "Node.js",
+      "Python",
+      "TensorFlow",
+      "Android",
+      "Kotlin",
+      "Firebase",
+      "AWS",
+      "Docker",
+      "TypeScript",
+      "FastAPI"
+    ],
+    "stats": [
+      {
+        "value": "6+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "15+",
+        "label": "Projects Built"
+      },
+      {
+        "value": "∞",
+        "label": "Lines of Code"
+      },
+      {
+        "value": "❤",
+        "label": "Open Source"
+      }
+    ]
+  },
+  "projects": {
+    "heading": "My Works",
+    "subLabel": "// MY WORKS",
+    "github": {
+      "username": "anglesvar",
+      "apiBase": "https://api.github.com/users/",
+      "query": "/repos?sort=created&direction=desc"
+    },
+    "displayCount": 4,
+    "fallbackRepos": [
+      {
+        "name": "AI-Chat-Engine",
+        "description": "Conversational AI engine with multi-turn memory and context management.",
+        "language": "Python",
+        "stargazers_count": 12,
+        "html_url": "https://github.com/anglesvar"
+      },
+      {
+        "name": "AndroidKit",
+        "description": "Modular Android architecture toolkit with MVVM and clean code principles.",
+        "language": "Kotlin",
+        "stargazers_count": 8,
+        "html_url": "https://github.com/anglesvar"
+      },
+      {
+        "name": "FullStack-Boilerplate",
+        "description": "Production-ready full-stack template with React + Node + PostgreSQL.",
+        "language": "TypeScript",
+        "stargazers_count": 21,
+        "html_url": "https://github.com/anglesvar"
+      },
+      {
+        "name": "CloudDeploy-CLI",
+        "description": "CLI tool for streamlined cloud deployments across AWS, GCP, Azure.",
+        "language": "Go",
+        "stargazers_count": 5,
+        "html_url": "https://github.com/anglesvar"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let's Connect",
+    "subLabel": "// CONTACT",
+    "tagline": "Have a project in mind or want to collaborate? I'm always open to new opportunities and interesting conversations."
+  },
+  "navigation": {
+    "links": [
+      "Home",
+      "About",
+      "Projects",
+      "Contact"
+    ],
+    "scrollThreshold": 60
+  },
+  "backgrounds": {
+    "hero": "https://images.unsplash.com/photo-1526779259212-939e64788e3c?q=80&w=2348&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "about": "https://plus.unsplash.com/premium_photo-1770876284693-21ae221757ed?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "projects": "https://images.unsplash.com/photo-1505238680356-667803448bb6?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "contact": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80"
+  },
+  "languageColors": {
+    "Python": "#3572A5",
+    "Kotlin": "#A97BFF",
+    "TypeScript": "#3178c6",
+    "Go": "#00ADD8",
+    "JavaScript": "#f1e05a",
+    "Java": "#b07219",
+    "Dart": "#00B4AB",
+    "Swift": "#F05138",
+    "Rust": "#DEA584"
+  }
+}
